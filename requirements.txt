@@ -1,15 +1,14 @@
 # Dependencias para OCR de recibos bancarios venezolanos
-# Optimizado para recursos limitados
+# Versión optimizada para CPUs antiguas
 
-# PyTorch CPU-only (se instala por separado en install.sh)
-# torch>=1.9.0
-# torchvision>=0.10.0
+# Procesamiento de imágenes (versiones compatibles)
+opencv-python-headless==4.5.5.64
+Pillow==9.5.0
+numpy<1.25.0
+scikit-image==0.19.3
 
-# OCR y procesamiento de imágenes
-easyocr>=1.6.0
-opencv-python-headless>=4.5.0
-Pillow>=8.0.0
-numpy>=1.21.0
+# OCR con Tesseract
+pytesseract==0.3.10
 
 # Utilidades
 pathlib2>=2.3.0
