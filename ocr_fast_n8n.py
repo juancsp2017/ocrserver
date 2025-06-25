@@ -250,6 +250,7 @@ def main():
     parser = argparse.ArgumentParser(description='OCR RÁPIDO para n8n')
     parser.add_argument('image_path', help='Ruta a la imagen')
     parser.add_argument('--verbose', '-v', action='store_true', help='Modo verbose')
+    parser.add_argument('--compact', '-c', action='store_true', help='Salida compacta')
     
     args = parser.parse_args()
     
@@ -260,6 +261,7 @@ def main():
         ocr = FastVenezuelanBankOCR()
         result = ocr.process_receipt_fast(args.image_path)
         
+        # La versión rápida ya es compacta por defecto, pero mantenemos compatibilidad
         print(json.dumps(result, indent=2, ensure_ascii=False))
         sys.exit(0 if result['success'] else 1)
         
